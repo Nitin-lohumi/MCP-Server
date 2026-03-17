@@ -1,145 +1,194 @@
 # 🌤️ Weather MCP Server
 
-![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)
-![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=flat-square&logo=node.js)
-![Status](https://img.shields.io/badge/Status-✅_Working-28A745?style=flat-square)
+![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Working-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
-## 📌 What is this?
+## 📌 Overview
 
-This project is a **POC (Proof of Concept)** that demonstrates how to extend **Claude Desktop** with custom tools using the [Model Context Protocol](https://modelcontextprotocol.io/).
+**Weather MCP Server** that demonstrates how to extend **Claude Desktop** using the **Model Context Protocol (MCP)**.
 
-When you ask Claude _"What's the weather in Delhi?"_, instead of guessing from training data — Claude calls this MCP server, which fetches **live weather** from OpenWeatherMap and returns it in real-time.
+Instead of relying on static knowledge, Claude can fetch **real-time weather data** by calling this MCP server.
+
+### 💡 Example
+
+> "What's the weather in Delhi?"  
+> Claude → MCP Server → OpenWeatherMap API → Live Response
+
+---
+
+## 🧠 Why This Project?
+
+- Demonstrates **AI + Backend Integration**
+- Shows real-world use of **MCP (Model Context Protocol)**
+- Converts AI from static → **real-time intelligent system**
+- Strong **portfolio project** for Full Stack + AI roles
 
 ---
 
 ## 🏗️ Architecture
 
-```
+
 Claude Desktop
-     │
-     │  stdio (JSON-RPC)
-     ▼
+│
+│ stdio (JSON-RPC)
+▼
 Weather MCP Server (Node.js)
-     │
-     │  REST API call
-     ▼
+│
+│ REST API call
+▼
 OpenWeatherMap API
-     │
-     ▼
-Live Weather Data → back to Claude
-```
+│
+▼
+Live Weather Data → Claude Response
+
+
+---
+
+## 🚀 Features
+
+- 🌐 Real-time weather data
+- 🔌 MCP (Model Context Protocol) integration
+- ⚡ Fast JSON-RPC communication (stdio)
+- 🛡️ Input validation using Zod
+- 🔄 Live API integration
+- 🧠 Extends AI capabilities beyond training data
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| TypeScript 5.9 | Primary language |
-| Node.js | Runtime |
-| `@modelcontextprotocol/sdk` | MCP server framework |
-| `zod` | Input schema validation |
-| OpenWeatherMap API | Live weather data source |
-| Claude Desktop | MCP client / AI interface |
+- TypeScript 5.9
+- Node.js
+- @modelcontextprotocol/sdk
+- Zod
+- OpenWeatherMap API
+- Claude Desktop
 
 ---
 
 ## 📁 Project Structure
 
-```
+
 MCP-Server/
 ├── src/
-│   └── server.ts        # Main MCP server source
+│ └── server.ts
 ├── dist/
-│   └── server.js        # Compiled output (run by Claude Desktop)
+│ └── server.js
 ├── package.json
 ├── tsconfig.json
 └── README.md
-```
+
 
 ---
 
 ## ⚙️ Setup & Installation
 
-### 1. Clone the repo
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Nitin-lohumi/MCP-Server.git
 cd MCP-Server
-```
-
-### 2. Install dependencies
-
-```bash
+2. Install Dependencies
 npm install
-```
-
-### 3. Build
-
-```bash
+3. Build Project
 npm run build
-```
+🔑 Get API Key
 
-### 4. Get an API key
+Visit: https://openweathermap.org
 
-- Sign up at [openweathermap.org](https://openweathermap.org)
-- Go to **API Keys** section and copy your key
+Sign up / login
 
-### 5. Configure Claude Desktop
+Generate your API key
 
-Open your `claude_desktop_config.json` file:
+⚙️ Claude Desktop Configuration
 
-**Windows path:**
+Open the config file:
 
-```
 C:\Users\<username>\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json
-```
 
-Add the following:
+Add this configuration:
 
-```json
 {
   "mcpServers": {
-    "MCP-Server": {
+    "Weather-MCP-Server": {
       "command": "node",
       "args": ["C:/path/to/MCP-Server/dist/server.js"],
       "env": {
-        "WEATHER_API": "your_openweathermap_api_key_here"
+        "WEATHER_API": "your_openweathermap_api_key"
       }
     }
   }
 }
-```
+▶️ Scripts
+npm run build   # Compile TypeScript → JavaScript
+npm run start   # Run server
+npm run dev     # Development mode
+🧪 How to Test
 
-### 6. Restart Claude Desktop
+Start Claude Desktop
 
-Claude Desktop will **automatically start** the MCP server. No manual run needed.
+Ask:
 
----
+What's the weather in Delhi?
 
-## 📜 Scripts
+Claude will:
 
-```bash
-npm run build   # Compile TypeScript → dist/
-npm run start   # Run compiled server manually
-npm run dev     # Run with ts-node (development)
-```
+Call MCP server
 
----
+Fetch live data
 
-## 🌱 Ideas for Extension
+Return real-time result
 
-- 5-day forecast
-- Weather alerts / warnings
-- Air quality index (AQI)
-- Sunrise / sunset times
-- Multiple cities comparison
+🌱 Future Improvements
 
----
+📅 5-day / hourly forecast
 
-## 👤 Author
+🌫️ Air Quality Index (AQI)
 
-**Nitin** — Built as a POC to demonstrate MCP tool integration with Claude Desktop.
+🚨 Weather alerts
+
+🌅 Sunrise / Sunset timing
+
+🌍 Multi-city comparison
+
+📊 Graph visualization
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repo
+
+Create a new branch
+
+Make changes
+
+Submit a Pull Request
+
+🧾 License
+
+This project is licensed under the MIT License.
+
+👨‍💻 Author
+
+Nitin Lohumi
+💻 Full Stack Developer (MERN + Next.js + AI)
+
+⭐ Support
+
+If you found this project helpful:
+
+⭐ Star the repo
+
+🍴 Fork it
+
+🧑‍💻 Share with others
+
+📬 Contact
+
+GitHub: https://github.com/Nitin-lohumi
