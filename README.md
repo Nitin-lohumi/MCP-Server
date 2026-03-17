@@ -1,13 +1,5 @@
 # 🌤️ Weather MCP Server
 
-![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue?style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Working-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
----
-
 ## 📌 Overview
 
 **Weather MCP Server** that demonstrates how to extend **Claude Desktop** using the **Model Context Protocol (MCP)**.
@@ -23,10 +15,8 @@ Instead of relying on static knowledge, Claude can fetch **real-time weather dat
 
 ## 🧠 Why This Project?
 
-- Demonstrates **AI + Backend Integration**
 - Shows real-world use of **MCP (Model Context Protocol)**
 - Converts AI from static → **real-time intelligent system**
-- Strong **portfolio project** for Full Stack + AI roles
 
 ---
 
