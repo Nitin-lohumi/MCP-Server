@@ -1,7 +1,5 @@
 # 🌤️ Weather MCP Server
 
-> A **Model Context Protocol (MCP)** server that gives Claude Desktop real-time weather data via the OpenWeatherMap API.
-
 ![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue?style=flat-square)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)
 ![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=flat-square&logo=node.js)
@@ -13,7 +11,7 @@
 
 This project is a **POC (Proof of Concept)** that demonstrates how to extend **Claude Desktop** with custom tools using the [Model Context Protocol](https://modelcontextprotocol.io/).
 
-When you ask Claude *"What's the weather in Delhi?"*, instead of guessing from training data — Claude calls this MCP server, which fetches **live weather** from OpenWeatherMap and returns it in real-time.
+When you ask Claude _"What's the weather in Delhi?"_, instead of guessing from training data — Claude calls this MCP server, which fetches **live weather** from OpenWeatherMap and returns it in real-time.
 
 ---
 
@@ -52,7 +50,7 @@ Live Weather Data → back to Claude
 ## 📁 Project Structure
 
 ```
-weather_mcp/
+MCP-Server/
 ├── src/
 │   └── server.ts        # Main MCP server source
 ├── dist/
@@ -69,8 +67,8 @@ weather_mcp/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/[your-username]/weather_mcp.git
-cd weather_mcp
+git clone https://github.com/Nitin-lohumi/MCP-Server.git
+cd MCP-Server
 ```
 
 ### 2. Install dependencies
@@ -95,6 +93,7 @@ npm run build
 Open your `claude_desktop_config.json` file:
 
 **Windows path:**
+
 ```
 C:\Users\<username>\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json
 ```
@@ -104,9 +103,9 @@ Add the following:
 ```json
 {
   "mcpServers": {
-    "weather_mcp": {
+    "MCP-Server": {
       "command": "node",
-      "args": ["C:/path/to/weather_mcp/dist/server.js"],
+      "args": ["C:/path/to/MCP-Server/dist/server.js"],
       "env": {
         "WEATHER_API": "your_openweathermap_api_key_here"
       }
@@ -121,9 +120,6 @@ Claude Desktop will **automatically start** the MCP server. No manual run needed
 
 ---
 
-
----
-
 ## 📜 Scripts
 
 ```bash
@@ -132,9 +128,10 @@ npm run start   # Run compiled server manually
 npm run dev     # Run with ts-node (development)
 ```
 
-```
+---
 
-Ideas for extension:
+## 🌱 Ideas for Extension
+
 - 5-day forecast
 - Weather alerts / warnings
 - Air quality index (AQI)
@@ -143,6 +140,6 @@ Ideas for extension:
 
 ---
 
-## Author
+## 👤 Author
 
-**Nitin** 
+**Nitin** — Built as a POC to demonstrate MCP tool integration with Claude Desktop.
